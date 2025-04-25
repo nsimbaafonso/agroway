@@ -11,6 +11,7 @@
     --light-black: #2c2929;
     --white:#fff;
     --white-dark: #edeaef;
+    --red: #dc3545;
     --bg: rgba(0, 0, 0, .7);
     --box-shadow: 0 .5rem 1rem rgba(0,0,0,.5);
     --border: .1rem solid rgba(0, 0, 0, .3);
@@ -541,6 +542,27 @@ section, footer{
    font-weight: 700;
 }
 /*pagination end*/
+
+/*error*/
+.error{
+    width: 100vw;
+}
+.error .content h1{
+    font-size: 6rem;
+    color: var(--red);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bolder;
+}
+.error .content p{
+    font-size: 3rem;
+    color: var(--primary);
+    text-align: center;
+    line-height: 1.5;
+    padding: 1rem 0;
+    font-weight: 700;
+}
+/*error end*/
 
 /*footer*/
 .footer{

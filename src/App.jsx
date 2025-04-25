@@ -5,6 +5,7 @@ import Blog from './pages/Blog';
 import Produtos from './pages/Produtos';
 import Contato from './pages/Contato';
 import Post from './pages/Post';
+import NotFound from './pages/NotFound';
 import Teste from './pages/Teste';
 import './assets/css/style.css'; // estilo global
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/blog/post/" element={<Post />} />
         <Route path="/produtos" element={<Produtos />} />
         <Route path="/contato" element={<Contato />} />
+        <Route path="*" element={<NotFound />} />
         <Route path="/teste" element={<Teste />} />
       </Routes>
     </Router>
