@@ -17,7 +17,7 @@ function NotFound() {
       <section className="error pt-8 d-flex">
         <div className="content">
             <h1>400</h1>
-            <p>Página não encontrada ou link quebrado ou é inexistente!</p>
+            <p>Página não encontrada ou inexistente!</p>
             <div className="d-flex">
                 <Link to="/" className="btn">Voltar Para Home</Link>
             </div>
