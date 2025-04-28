@@ -48,7 +48,7 @@ function Header() {
         <Link to="#"
           className="fas fa-shopping-cart"
           id="cart-btn"
-        ></Link>
+        ><span className="count">0</span></Link>
         <div
           className={`fas ${menuAtivo ? "fa-times" : "fa-bars"}`}
           id="menu"

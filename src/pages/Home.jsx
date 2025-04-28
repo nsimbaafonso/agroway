@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import homeVideo from "../assets/video/Agroway-home.mp4";
 import sobreImg from "../assets/img/sobre.jpg";
 
 function Home() {
@@ -17,10 +18,21 @@ function Home() {
       {/*home*/}
       <section className="home">
         <div className="content">
+          <h1>Agroway Limited</h1>
+          <p>DÊ O IMPULSO QUE O SEU NEGÓCIO PRECISA</p>
+          <Link to="#" className="btn">Iniciar Agora</Link>
+        </div>
+
+        <div className="video-container">
+          <video src={homeVideo} id="video" loop autoplay muted type="video/mp4"></video>
+        </div>
+      </section>
+      {/*<section className="home">
+        <div className="content">
             <h3>Agroway Limited</h3>
             <Link to="#" className="btn">Iniciar Agora</Link>
         </div>
-      </section>
+      </section>*/}
 
       {/*about*/}
       <section className="about">
@@ -36,7 +48,6 @@ function Home() {
               aliquam iure error deserunt sint nobis eius vitae, blanditiis ex commodi molestias! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             </p>
             <Link to="/sobre" className="btn">Leia Mais</Link>
-
           </div>
         </div>
       </section>
@@ -177,17 +188,21 @@ function Home() {
             </div>
           </div>
         </div>
+
+        <div className="d-flex pt-8">
+        <Link to="/produtos" className="btn">Ver Mais Produtos <i class="fas fa-arrow-right"></i></Link>
+        </div>
       </section>
 
       {/*parallax*/}
       <section className="parallax">
         <div className="content">
-            <h3>DÊ O IMPULSO QUE O SEU NEGÓCIO PRECISA</h3>
-            <p>
-               Investir em produtos de qualidade pode trazer retornos significativos para o seu negócio, aumentando seus lucros e atraindo novos clientes.
-            </p>
-            <Link to="/contato" className="btn">Contactar</Link>
-         </div>
+          <h3>DÊ O IMPULSO QUE O SEU NEGÓCIO PRECISA</h3>
+          <p>
+            Investir em produtos de qualidade pode trazer retornos significativos para o seu negócio, aumentando seus lucros e atraindo novos clientes.
+          </p>
+          <Link to="#" className="btn">Cadastrar</Link>
+        </div>
       </section>
 
       {/*blogs*/}

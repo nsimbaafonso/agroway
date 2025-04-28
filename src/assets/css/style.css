@@ -16,6 +16,7 @@
     --box-shadow: 0 .5rem 1rem rgba(0,0,0,.5);
     --border: .1rem solid rgba(0, 0, 0, .3);
     --border2: .1rem solid var(--white);
+    --border3: .1rem solid var(--primary);
 }
 
 *{
@@ -80,10 +81,14 @@ section, footer{
 	cursor: pointer;
 	font-size: 1.7rem;
 	text-transform: capitalize;
+    font-weight: 700;
 }
 .btn:hover{
 	background-color: var(--main);
 	color: var(--white);
+}
+.btn > i{
+	margin-left: .5rem;
 }
 
 .sub-heading{
@@ -169,11 +174,25 @@ section, footer{
     margin-left: .5rem;
     color: var(--white);
     cursor: pointer;
+    position: relative;
 }
 .header .icons div:hover,
 .header .icons a:hover{
     color: var(--white);
     background-color: var(--primary);
+}
+.header .icons a .count{
+    position: absolute;
+    top: -.9rem; right: -.9rem;
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 700;
+    padding: 0;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
 }
 #menu{
     display: none;
@@ -182,6 +201,36 @@ section, footer{
 
 /*home*/
 .home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    position: relative;
+}
+.home .content{
+    text-align: center;
+}
+.home .content h1{
+    font-size: 4.5rem;
+    color: var(--white);
+    text-transform: uppercase;
+    text-shadow: 0 .3rem .5rem rgba(0,0,0,0.2);
+}
+.home .content p{
+    font-size: 2.5rem;
+    color: var(--white);
+    padding: .5rem 0;
+}
+.home .video-container #video{
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*.home{
 	min-height: 95vh;
 	display: flex;
 	align-items: center;
@@ -200,7 +249,7 @@ section, footer{
 	text-transform: capitalize;
 	color: var(--white);
 	padding-bottom: 3.5rem;
-}
+}*/
 /*home end*/
 
 /*about*/

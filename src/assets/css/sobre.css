@@ -1,12 +1,41 @@
 @charset "UTF-8";
 
-/*team*/
-.team .box-container{
+/*section-about*/
+.section-about{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+	background-color: var(--main);
+}
+.section-about .content{
+    text-align: center;
+}
+.section-about .content h3{
+    font-size: 2.5rem;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: 3rem;
+}
+.section-about .content p{
+    font-size: 2rem;
+    color: var(--white);
+    line-height: 1.5;
+    padding: 1rem 0;
+}
+.section-about .content .btn:hover{
+    border: var(--border3);
+}
+
+
+/*.focus */
+.focus .box-container{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 	gap: 2rem;
 }
-.team .box-container .box{
+.focus  .box-container .box{
 	background: var(--white);
 	border-radius: .5rem;
 	box-shadow: var(--box-shadow);
@@ -14,24 +43,24 @@
 	overflow: hidden;
 	text-align: center;
 }
-.team .box-container .box .image{
+.focus  .box-container .box .image{
 	position: relative;
 	overflow: hidden;
 }
-.team .box-container .box .image img{
+.focus  .box-container .box .image img{
 	width: 100%;
 	object-fit: cover;
 }
-.team .box-container .box .image .share{
+.focus .box-container .box .image .share{
 	position: absolute;
 	bottom: -10rem; left: 0; right: 0;
 	padding: 2rem;
 	background: rgba(242, 242, 242, .6);
 }
-.team .box-container .box:hover .image .share{
+.focus .box-container .box:hover .image .share{
 	bottom: 0;
 }
-.team .box-container .box .image .share a{
+.focus .box-container .box .image .share a{
 	height: 4rem;
 	width: 4rem;
 	line-height: 4rem;
@@ -41,20 +70,20 @@
 	background: var(--primary);
 	border-radius: .5rem;
 }
-.team .box-container .box .image .share a:hover{
+.focus .box-container .box .image .share a:hover{
 	color: var(--primary);
 	background: var(--white);
 }
-.team .box-container .box .content{
+.focus .box-container .box .content{
 	padding: 2rem;
 	padding-top: 1rem;
 	align-items: center;
 }
-.team .box-container .box .content h3{
+.focus .box-container .box .content h3{
 	font-size: 2rem;
 	color: var(--black);
 }
-.team .box-container .box .content h5{
+.focus .box-container .box .content h5{
 	font-size: 1.7rem;
 	line-height: 2;
 	color: #777;

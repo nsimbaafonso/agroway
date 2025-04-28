@@ -1,5 +1,6 @@
 // src/pages/Sobre.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -41,13 +42,25 @@ function Sobre() {
         </div>
       </section>
 
-      <section className="team">
-        <h3 className="heading">Nossa <span>Equipa</span></h3>
+      {/*section-about*/}
+      <section className="section-about">
+        <div className="content">
+          <h3>IMPULSIONE SEU NEGÓCIO NA AGROWAY</h3>
+          <p>
+            Plataforma de qualidade significativa para o seu negócio, conectando produtores, motoristas e clientes.
+          </p>
+          <Link to="#" className="btn">Cadastrar</Link>
+        </div>
+      </section>
+
+      {/*focus*/}
+      <section className="focus">
+        <h3 className="heading">Nossas <span>Prioridades</span></h3>
 
         <div className="box-container">
           <div class="box">
             <div class="image">
-              <img src={sobreTeam1} alt="Team 1"/>
+              <img src={sobreTeam1} alt="Prioridade 1: Clientes"/>
               <div class="share">
                 <a href="tel:+244 999999999" class="fas fa-phone" title="Ligar Agora"></a>
                 <a href="https://api.whatsapp.com/send/?phone=244999999999&text=Oi" target="_blank" class="fab fa-whatsapp" title="Enviar mensagem via Whatsapp"></a>
@@ -55,13 +68,13 @@ function Sobre() {
                 </div>
             </div>
             <div class="content">
-              <h3>Cliente</h3>
+              <h3>Clientes</h3>
               <h5>Agroway</h5>
             </div>
           </div>
           <div class="box">
             <div class="image">
-              <img src={sobreTeam2}  alt="Team 2"/>
+              <img src={sobreTeam2}  alt="Prioridade 2: Motoristas"/>
               <div class="share">
                 <a href="tel:+244 999999999" class="fas fa-phone" title="Ligar Agora"></a>
                 <a href="https://api.whatsapp.com/send/?phone=244999999999&text=Oi" target="_blank" class="fab fa-whatsapp" title="Enviar mensagem via Whatsapp"></a>
@@ -69,13 +82,13 @@ function Sobre() {
                 </div>
             </div>
             <div class="content">
-              <h3>Motorista</h3>
+              <h3>Motoristas</h3>
               <h5>Agroway</h5>
             </div>
           </div>
           <div class="box">
             <div class="image">
-              <img src={sobreTeam3}  alt="Team 3"/>
+              <img src={sobreTeam3}  alt="Prioridade 3: Produtores"/>
               <div class="share">
                 <a href="tel:+244 999999999" class="fas fa-phone" title="Ligar Agora"></a>
                 <a href="https://api.whatsapp.com/send/?phone=244999999999&text=Oi" target="_blank" class="fab fa-whatsapp" title="Enviar mensagem via Whatsapp"></a>
@@ -83,7 +96,7 @@ function Sobre() {
                 </div>
             </div>
             <div class="content">
-              <h3>Produtora</h3>
+              <h3>Produtores</h3>
               <h5>Agroway</h5>
             </div>
           </div>
