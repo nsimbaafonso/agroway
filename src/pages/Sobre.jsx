@@ -5,9 +5,9 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import sobreImg from "../assets/img/sobre2.jpg";
-import sobreTeam1 from "../assets/img/team-1.jpg";
-import sobreTeam2 from "../assets/img/team-2.jpg";
-import sobreTeam3 from "../assets/img/team-3.jpg";
+import sobreFocus1 from "../assets/img/focus-1.jpg";
+import sobreFocus2 from "../assets/img/focus-2.jpg";
+import sobreFocus3 from "../assets/img/focus-3.jpg";
 import './../assets/css/sobre.css';
 
 function Sobre() {
@@ -60,7 +60,7 @@ function Sobre() {
         <div className="box-container">
           <div class="box">
             <div class="image">
-              <img src={sobreTeam1} alt="Prioridade 1: Clientes"/>
+              <img src={sobreFocus1} alt="Prioridade 1: Clientes"/>
               <div class="share">
                 <a href="tel:+244 999999999" class="fas fa-phone" title="Ligar Agora"></a>
                 <a href="https://api.whatsapp.com/send/?phone=244999999999&text=Oi" target="_blank" class="fab fa-whatsapp" title="Enviar mensagem via Whatsapp"></a>
@@ -74,7 +74,7 @@ function Sobre() {
           </div>
           <div class="box">
             <div class="image">
-              <img src={sobreTeam2}  alt="Prioridade 2: Motoristas"/>
+              <img src={sobreFocus2}  alt="Prioridade 2: Motoristas"/>
               <div class="share">
                 <a href="tel:+244 999999999" class="fas fa-phone" title="Ligar Agora"></a>
                 <a href="https://api.whatsapp.com/send/?phone=244999999999&text=Oi" target="_blank" class="fab fa-whatsapp" title="Enviar mensagem via Whatsapp"></a>
@@ -88,7 +88,7 @@ function Sobre() {
           </div>
           <div class="box">
             <div class="image">
-              <img src={sobreTeam3}  alt="Prioridade 3: Produtores"/>
+              <img src={sobreFocus3}  alt="Prioridade 3: Produtores"/>
               <div class="share">
                 <a href="tel:+244 999999999" class="fas fa-phone" title="Ligar Agora"></a>
                 <a href="https://api.whatsapp.com/send/?phone=244999999999&text=Oi" target="_blank" class="fab fa-whatsapp" title="Enviar mensagem via Whatsapp"></a>

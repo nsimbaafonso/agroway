@@ -24,7 +24,7 @@ function Home() {
         </div>
 
         <div className="video-container">
-          <video src={homeVideo} id="video" loop autoplay muted type="video/mp4"></video>
+          <video src={homeVideo} id="video" loop autoPlay muted type="video/mp4"></video>
         </div>
       </section>
       {/*<section className="home">
