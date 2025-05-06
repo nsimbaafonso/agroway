@@ -199,6 +199,26 @@ section, footer{
 }
 /* header end */
 
+/*category*/
+.category{
+    padding: 1.4rem 7%;
+    border-bottom: .1rem solid #eee;
+}
+.category .category-slider{
+	padding: 1rem;
+}
+.category .slide a{
+    font-size: 1.6rem;
+    padding: 1rem;
+    background-color: var(--main);
+    border-radius: .5rem;
+    color: var(--white);
+}
+.category .slide a:hover{
+    background-color: var(--primary);
+}
+/*category end*/
+
 /*home*/
 .home{
     min-height: 100vh;
