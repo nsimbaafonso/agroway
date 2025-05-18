@@ -8,11 +8,13 @@ import Post from './pages/Post';
 import NotFound from './pages/NotFound';
 import Teste from './pages/Teste';
 import DashboardHome from './dashboard/DashboardHome';
-import './assets/css/style.css'; // estilo global
+//import './assets/css/style.css'; // estilo global
+import GlobalStyle from './assets/css/GlobalStyle';
 
 function App() {
   return (
     <Router>
+      <GlobalStyle />
       <Routes>
         {/*Rotas do site principal*/}
         <Route path="/" element={<Home />} />
