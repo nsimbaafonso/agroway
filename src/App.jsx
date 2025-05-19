@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation  } from 'react-router-dom';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -29,8 +29,13 @@ import OrdersPage from "./dashboard/pages/OrdersPage";
 import AnalyticsPage from "./dashboard/pages/AnalyticsPage";
 import SettingsPage from "./dashboard/pages/SettingsPage";
 
+// Componente separado para usar useLocation corretamente
+function AppContent() {
+  const location = useLocation();
 
-function App() {
+  // Aplica GlobalStyle apenas fora do dashboard
+  const isDashboardRoute = location.pathname.startsWith('/dashboard');
+
   // useEffect é um hook que roda após o componente ser montado
   useEffect(() => {
     // Inicializa a biblioteca AOS (Animate On Scroll)
@@ -40,10 +45,11 @@ function App() {
       //mirror: true,   // Faz a animação acontecer também ao rolar para cima
     });
   }, []); // O array vazio faz com que o useEffect rode apenas uma vez, quando o componente for carregado
+  
 
   return (
-    <Router>
-      <GlobalStyle />
+    <>
+      {!isDashboardRoute && <GlobalStyle />}
       <Routes>
         {/*Rotas do site principal*/}
         <Route path="/" element={<Home />} />
@@ -115,6 +121,14 @@ function App() {
         {/*Rotas não encontradas*/}
         <Route path="*" element={<NotFound />} />
       </Routes>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
