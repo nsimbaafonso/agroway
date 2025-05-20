@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation  } from 'react-router-dom';
 import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 // Estilo global
 // import './assets/css/style.css'; 
@@ -35,16 +33,6 @@ function AppContent() {
 
   // Aplica GlobalStyle apenas fora do dashboard
   const isDashboardRoute = location.pathname.startsWith('/dashboard');
-
-  // useEffect é um hook que roda após o componente ser montado
-  useEffect(() => {
-    // Inicializa a biblioteca AOS (Animate On Scroll)
-    AOS.init({
-      duration: 1000, // Define a duração das animações em milissegundos (1 segundo)
-      once: false,    // Permite que a animação ocorra todas as vezes que o elemento entrar na tela
-      //mirror: true,   // Faz a animação acontecer também ao rolar para cima
-    });
-  }, []); // O array vazio faz com que o useEffect rode apenas uma vez, quando o componente for carregado
   
 
   return (
