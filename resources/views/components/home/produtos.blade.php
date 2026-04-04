@@ -1,81 +1,180 @@
-<section class="py-20 bg-white">
+<section class="relative bg-neutral-50 py-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
-        
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-black text-green-950 uppercase tracking-wider">Produtos em Destaque</h2>
-            <div class="w-20 h-1 bg-yellow-400 mt-4 mx-auto rounded-full"></div>
+
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <h2 class="text-xs uppercase tracking-[0.3em] text-green-800 font-black mb-4">
+                Marketplace
+            </h2>
+            <h3 class="text-4xl md:text-5xl font-bold text-neutral-900 mb-6 tracking-tight">
+                Produtos em <span class="text-green-800">destaque</span>
+            </h3>
+            <div class="w-20 h-1.5 bg-yellow-400 mx-auto mb-6 rounded-full"></div>
+            <p class="text-lg text-neutral-500 font-light leading-relaxed">
+                A excelência do campo selecionada rigorosamente para a sua mesa.
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            @php
-                // Note: Preços agora são floats/inteiros para permitir formatação matemática
-                $produtos = [
-                    ['id' => 1, 'nome' => 'Abacates', 'provincia' => 'Huambo', 'img' => 'abacates.jpg', 'preco' => 1500, 'produtor' => 'Fazenda Girassol', 'desc' => 'Abacates manteiga colhidos hoje, ideais para consumo imediato e cremosos.'],
-                    ['id' => 2, 'nome' => 'Abacaxis', 'provincia' => 'Bengo', 'img' => 'abacaxis.jpg', 'preco' => 1200, 'produtor' => 'Cooperativa Agro-Sul', 'desc' => 'Abacaxi pérola muito doce e suculento, direto das terras do Huambo.'],
-                    ['id' => 3, 'nome' => 'Bananas', 'provincia' => 'Benguela', 'img' => 'bananas.jpg', 'preco' => 800, 'produtor' => 'Sítio Boa Vista', 'desc' => 'Bananas ricas em potássio, cultivadas de forma 100% orgânica e natural.'],
-                    ['id' => 4, 'nome' => 'Beringelas', 'provincia' => 'Cuanza Sul', 'img' => 'beringelas.jpg', 'preco' => 950, 'produtor' => 'Horta do Vale', 'desc' => 'Beringelas frescas e firmes, selecionadas manualmente para maior qualidade.'],
-                    ['id' => 5, 'nome' => 'Mandiocas', 'provincia' => 'Uíge', 'img' => 'mandiocas.jpg', 'preco' => 1100, 'produtor' => 'Fazenda Central', 'desc' => 'Mandioca macia de cozimento rápido, perfeita para acompanhamentos.'],
-                    ['id' => 6, 'nome' => 'Milhos', 'provincia' => 'Huíla', 'img' => 'milhos.jpg', 'preco' => 750, 'produtor' => 'Agro Futuro', 'desc' => 'Milho verde doce e tenro, ideal para canjicas, pamonhas ou cozidos.'],
-                ];
-            @endphp
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-            @foreach($produtos as $prod)
-            <a href="/produto/{{ $prod['id'] }}" class="cursor-pointer group bg-neutral-50 rounded-lg overflow-hidden border border-neutral-200 hover:shadow-2xl hover:border-green-900/20 transition-all duration-500 flex flex-col relative">
-                
-                <div class="relative overflow-hidden aspect-square bg-neutral-100">
-                    <img src="{{ asset('img/' . $prod['img']) }}" alt="{{ $prod['nome'] }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    
-                    <div class="absolute top-4 left-4 flex flex-col gap-1">
-                        <div class="bg-white/95 backdrop-blur px-3 py-1 rounded-full shadow-sm border border-neutral-100 w-fit">
-                            <p class="text-[10px] font-bold text-green-950 uppercase tracking-tight">Produtor: {{ $prod['produtor'] }}</p>
-                        </div>
-                        <div class="bg-yellow-400 px-3 py-0.5 rounded-full shadow-sm w-fit">
-                            <p class="text-[9px] font-black text-green-950 uppercase tracking-tighter">{{ $prod['provincia'] }}</p>
-                        </div>
-                    </div>
-
-                    <div class="absolute bottom-4 right-4 translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
-                        <div class="bg-green-950 text-white p-3 rounded-full shadow-lg hover:bg-green-900">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                        </div>
-                    </div>
+            <a href="/produtos/detalhes" class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 touch-manipulation block">
+                <div class="relative overflow-hidden aspect-4/3">
+                    <img src="{{ asset('img/abacates.jpg') }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Abacate" />
+                    <div class="absolute inset-0 bg-green-950/10 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500"></div>
                 </div>
-
-                <div class="p-6 flex flex-col grow">
-                    <h3 class="font-bold text-green-950 text-xl uppercase leading-snug group-hover:text-green-700 transition-colors">
-                        {{ $prod['nome'] }}
-                    </h3>
-
-                    <p class="mt-2 text-neutral-500 text-sm line-clamp-2 italic leading-relaxed">
-                        "{{ $prod['desc'] }}"
-                    </p>
-                    
-                    <div class="mt-auto pt-6 flex justify-between items-end border-t border-neutral-200/60">
-                        <div>
-                            <span class="text-[10px] text-neutral-400 uppercase font-bold block mb-1">Preço Kwanza</span>
-                            <span class="text-2xl font-black text-green-900 italic">
-                                {{-- Formatação PHP: 0 casas decimais, ponto como milhar e vírgula como decimal --}}
-                                {{ number_format($prod['preco'], 0, ',', '.') }} 
-                                <small class="text-xs font-bold not-italic">Kz</small>
-                            </span>
+                
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-neutral-800 tracking-tight">Abacate</h4>
+                        <div class="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-neutral-400 bg-neutral-50 px-2 py-1 rounded">
+                            <i class="fas fa-location-dot text-yellow-500"></i>
+                            <span>Huambo</span>
                         </div>
-                        
-                        <div class="text-green-950 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
+                    </div>
+                    <p class="text-sm text-neutral-500 mb-6 leading-relaxed line-clamp-2">
+                        Ricos em nutrientes e com cremosidade natural, colhidos no ponto ideal.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-neutral-100 pt-6">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] uppercase tracking-widest text-neutral-400 font-bold">Preço Unitário</span>
+                            <span class="text-green-800 font-black text-xl tracking-tight">2.500,00 <span class="text-sm text-neutral-400 font-medium">AOA</span></span>
                         </div>
                     </div>
                 </div>
             </a>
-            @endforeach
+
+            <a href="/produtos/detalhes" class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 touch-manipulation block">
+                <div class="relative overflow-hidden aspect-4/3">
+                    <img src="{{ asset('img/abacaxis.jpg') }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Abacaxi" />
+                    <div class="absolute inset-0 bg-green-950/10 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-neutral-800 tracking-tight">Abacaxi</h4>
+                        <div class="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-neutral-400 bg-neutral-50 px-2 py-1 rounded">
+                            <i class="fas fa-location-dot text-yellow-500"></i>
+                            <span>Benguela</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-neutral-500 mb-6 leading-relaxed line-clamp-2">
+                        Doces, suculentos e com o sabor vibrante das terras tropicais.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-neutral-100 pt-6">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] uppercase tracking-widest text-neutral-400 font-bold">Preço Unitário</span>
+                            <span class="text-green-800 font-black text-xl tracking-tight">1.800,00 <span class="text-sm text-neutral-400 font-medium">AOA</span></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/produtos/detalhes" class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 touch-manipulation block">
+                <div class="relative overflow-hidden aspect-4/3">
+                    <img src="{{ asset('img/bananas.jpg') }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Banana" />
+                    <div class="absolute inset-0 bg-green-950/10 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-neutral-800 tracking-tight">Banana</h4>
+                        <div class="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-neutral-400 bg-neutral-50 px-2 py-1 rounded">
+                            <i class="fas fa-location-dot text-yellow-500"></i>
+                            <span>Uíge</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-neutral-500 mb-6 leading-relaxed line-clamp-2">
+                        Energia pura e natural, produzida com métodos sustentáveis.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-neutral-100 pt-6">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] uppercase tracking-widest text-neutral-400 font-bold">Preço Unitário</span>
+                            <span class="text-green-800 font-black text-xl tracking-tight">1.200,00 <span class="text-sm text-neutral-400 font-medium">AOA</span></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/produtos/detalhes" class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 touch-manipulation block">
+                <div class="relative overflow-hidden aspect-4/3">
+                    <img src="{{ asset('img/beringelas.jpg') }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Beringela" />
+                    <div class="absolute inset-0 bg-green-950/10 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-neutral-800 tracking-tight">Beringela</h4>
+                        <div class="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-neutral-400 bg-neutral-50 px-2 py-1 rounded">
+                            <i class="fas fa-location-dot text-yellow-500"></i>
+                            <span>Huíla</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-neutral-500 mb-6 leading-relaxed line-clamp-2">
+                        Versátil e nutritiva, essencial para uma dieta equilibrada.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-neutral-100 pt-6">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] uppercase tracking-widest text-neutral-400 font-bold">Preço Unitário</span>
+                            <span class="text-green-800 font-black text-xl tracking-tight">1.600,00 <span class="text-sm text-neutral-400 font-medium">AOA</span></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/produtos/detalhes" class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 touch-manipulation block">
+                <div class="relative overflow-hidden aspect-4/3">
+                    <img src="{{ asset('img/mandiocas.jpg') }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Mandioca" />
+                    <div class="absolute inset-0 bg-green-950/10 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-neutral-800 tracking-tight">Mandioca</h4>
+                        <div class="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-neutral-400 bg-neutral-50 px-2 py-1 rounded">
+                            <i class="fas fa-location-dot text-yellow-500"></i>
+                            <span>Malanje</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-neutral-500 mb-6 leading-relaxed line-clamp-2">
+                        Tradição e qualidade diretamente das melhores terras de Malanje.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-neutral-100 pt-6">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] uppercase tracking-widest text-neutral-400 font-bold">Preço Unitário</span>
+                            <span class="text-green-800 font-black text-xl tracking-tight">900,00 <span class="text-sm text-neutral-400 font-medium">AOA</span></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/produtos/detalhes" class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 touch-manipulation block">
+                <div class="relative overflow-hidden aspect-4/3">
+                    <img src="{{ asset('img/milhos.jpg') }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Milho" />
+                    <div class="absolute inset-0 bg-green-950/10 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-neutral-800 tracking-tight">Milho</h4>
+                        <div class="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-neutral-400 bg-neutral-50 px-2 py-1 rounded">
+                            <i class="fas fa-location-dot text-yellow-500"></i>
+                            <span>Cuanza Sul</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-neutral-500 mb-6 leading-relaxed line-clamp-2">
+                        Grãos selecionados com rigor para garantir o melhor sabor.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-neutral-100 pt-6">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] uppercase tracking-widest text-neutral-400 font-bold">Preço Unitário</span>
+                            <span class="text-green-800 font-black text-xl tracking-tight">700,00 <span class="text-sm text-neutral-400 font-medium">AOA</span></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
         </div>
 
-        <div class="mt-16 text-center">
-            <a href="/produtos" class="cursor-pointer inline-block px-12 py-4 bg-yellow-400 hover:bg-yellow-500 text-green-950 font-bold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-widest text-sm">
-                Ver catálogo completo
+        <div class="mt-24 text-center">
+            <a href="/todos-os-produtos"
+               class="inline-block px-12 py-5 bg-green-800 text-white text-xs font-black rounded-md 
+                      hover:bg-green-900 active:scale-95 transition-all shadow-[0_15px_35px_-12px_rgba(22,101,52,0.4)] 
+                      uppercase tracking-[0.2em]">
+                Explorar Catálogo Completo
             </a>
         </div>
     </div>

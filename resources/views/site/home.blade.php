@@ -4,9 +4,10 @@
 
 @section('conteudo')
     <x-home.hero />
-    <x-home.produtos />
     <x-home.como-funciona />
+    <x-home.produtos />
     <x-home.parallax />
+    <x-home.como-usar />
     <x-home.outros-pordutos />
     <x-home.cta-home />
 @endsection
