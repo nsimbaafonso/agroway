@@ -10,4 +10,9 @@ class SiteController extends Controller
     public function home() {
         return view("site.home");
     }
+
+    //produtos
+    public function produtos() {
+        return view("site.produtos");
+    }
 }
