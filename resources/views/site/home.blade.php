@@ -1,9 +1,12 @@
 @extends('layouts.site')
 
-@section('title', 'Agroway')
+@section('title', 'Agroway - Conectando o Campo ao Futuro')
 
 @section('conteudo')
-    <section>
-    </section>
+    <x-home.hero />
+    <x-home.produtos />
+    <x-home.como-funciona />
+    <x-home.parallax />
+    <x-home.outros-pordutos />
+    <x-home.cta-home />
 @endsection
-
