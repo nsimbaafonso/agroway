@@ -153,9 +153,9 @@
                 </div>
             </div>
 
-            <!-- Navegação -->
+            <!-- Links -->
             <div class="flex flex-col gap-2">
-                <h3 class="text-lg font-semibold mb-4 text-white">Navegação</h3>
+                <h3 class="text-lg font-semibold mb-4 text-white">Link Rápidos</h3>
 
                 <a href="/" class="text-neutral-400 hover:text-yellow-400 transition hover:pl-1">Home</a>
                 <a href="/sobre" class="text-neutral-400 hover:text-yellow-400 transition hover:pl-1">Sobre</a>
