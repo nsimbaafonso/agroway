@@ -1,7 +1,8 @@
 @extends('layouts.site')
 
-@section('title', 'Agroway - Conectando o Campo ao Futuro')
+@section('title', 'Produtos - Conectando o Campo ao Futuro')
 
 @section('conteudo')
+    <x-produtos.banner-produtos />
     <x-produtos.produtos />
 @endsection
