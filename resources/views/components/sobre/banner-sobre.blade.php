@@ -19,9 +19,9 @@
 
             <div class="hero-static-anim pt-8">
                 <a href="#nossa-historia"
-                    class="inline-block px-12 py-5 bg-green-600 text-white text-xs font-black rounded-md 
-                          hover:bg-green-500 active:scale-95 transition-all 
-                          shadow-[0_15px_40px_-12px_rgba(22,163,74,0.4)] 
+                    class="inline-block px-12 py-5 bg-yellow-400 text-slate-950 text-xs font-black rounded-md 
+                          hover:bg-yellow-300 active:scale-95 transition-all 
+                          shadow-[0_15px_40px_-12px_rgba(250,204,21,0.5)] 
                           uppercase tracking-[0.2em]">
                     Conheça nossa história
                 </a>
