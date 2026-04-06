@@ -170,7 +170,7 @@
         </div>
 
         <div class="mt-24 text-center">
-            <a href="/todos-os-produtos"
+            <a href="/produtos"
                class="inline-block px-12 py-5 bg-green-800 text-white text-xs font-black rounded-md 
                       hover:bg-green-900 active:scale-95 transition-all shadow-[0_15px_35px_-12px_rgba(22,101,52,0.4)] 
                       uppercase tracking-[0.2em]">
