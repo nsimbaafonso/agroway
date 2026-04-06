@@ -29,7 +29,7 @@
             </a>
 
             <div class="flex items-center gap-4 md:hidden">
-                <a href="#" class="relative text-xl text-yellow-400 hover:scale-110 transition">
+                <a href="/carrinho" class="relative text-xl text-yellow-400 hover:scale-110 transition">
                     <i class="fas fa-shopping-cart"></i>
                     <span
                         class="absolute -top-2 -right-2 bg-yellow-400 text-green-950 text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">
