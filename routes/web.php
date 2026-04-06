@@ -12,4 +12,25 @@ Route::get('/produtos/detalhes', [SiteController::class, 'detalhesProduto'])->na
 Route::get('/carrinho', [SiteController::class, 'carrinho'])->name('carrinho');
 Route::get('/checkout', [SiteController::class, 'checkout'])->name('checkout');
 
-//Rotas de login
+//Rotas de autenticação
+Route::get("/login", function () {
+    return view("auth.login");
+});
+Route::get("/criar-conta", function () {
+    return view("auth.register");
+});
+Route::get("/criar-conta/motorista/", function () {
+    return view("auth.register-vehicle");
+});
+Route::get("/recuperar-senha", function () {
+    return view("auth.forgot-password");
+});
+Route::get("/redefinir-senha", function () {
+    return view("auth.reset-password");
+});
+
+//dashboard do produtor
+
+//dashboard do cliente
+
+//dashboard do entregador
