@@ -77,7 +77,7 @@
 
                 <div class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
 
-                    <a href="#"
+                    <a href="/carrinho"
                         class="hidden md:block relative text-xl text-yellow-400 hover:scale-110 transition mr-2">
                         <i class="fas fa-shopping-cart"></i>
                         <span
