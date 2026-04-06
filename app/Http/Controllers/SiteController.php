@@ -15,4 +15,14 @@ class SiteController extends Controller
     public function produtos() {
         return view("site.produtos");
     }
+
+    //detalhes do produtos
+    public function detalhesProduto() {
+        return view("site.produto-detalhes");
+    }
+
+    //carrinho de compras
+    public function carrinho() {
+        return view("site.carrinho");
+    }
 }
