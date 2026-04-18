@@ -19,8 +19,7 @@
 </head>
 
 <body>
-    <header id="header"
-        class="fixed w-full top-0 left-0 z-50 bg-green-950/90 backdrop-blur-md text-white transition-all duration-300">
+    <header x-data="{ open: false }" @scroll.window="open = false" id="header" class="fixed w-full top-0 left-0 z-50 bg-green-950/90 backdrop-blur-md text-white transition-all duration-300">
 
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
@@ -37,37 +36,47 @@
                     </span>
                 </a>
 
-                <button id="menu-btn" class="text-2xl text-yellow-400 hover:scale-110 transition">
-                    <i id="menu-icon" class="fas fa-bars"></i>
+                <button @click="open = !open" class="text-2xl text-yellow-400 hover:scale-110 transition">
+                    <i :class="open ? 'fas fa-times' : 'fas fa-bars'"></i>
                 </button>
             </div>
 
-            <nav id="menu"
-                class="absolute md:static top-full left-0 w-full md:w-auto 
-               bg-green-900/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none
-               flex flex-col md:flex-row items-center
-               gap-6 md:gap-8
-               px-6 md:px-0 py-6 md:py-0
-               opacity-0 md:opacity-100
-               scale-95 md:scale-100
-               pointer-events-none md:pointer-events-auto
-               transition-all duration-300 ease-in-out">
+            <nav 
+                x-show="open || window.innerWidth >= 768"
+                x-cloak
+                @resize.window="if(window.innerWidth >= 768) open = false"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 -translate-y-4"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-4"
+                class="absolute z-50 md:static top-full left-0 w-full md:w-auto 
+                bg-green-900/95 md:bg-transparent
+                flex flex-col md:flex-row items-center
+                gap-6 md:gap-8
+                px-6 md:px-0 py-6 md:py-0"
+            >
 
                 <div
                     class="flex flex-col md:flex-row items-center gap-6 md:gap-8 font-medium text-sm uppercase tracking-wider">
                     <a href="/"
+                        @click="open = false"
                         class="relative hover:text-yellow-400 transition after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-yellow-400 after:transition-all hover:after:w-full">
                         Home
                     </a>
                     <a href="/produtos"
+                        @click="open = false"
                         class="relative hover:text-yellow-400 transition after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-yellow-400 after:transition-all hover:after:w-full">
                         Produtos
                     </a>
                     <a href="/sobre"
+                        @click="open = false"
                         class="relative hover:text-yellow-400 transition after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-yellow-400 after:transition-all hover:after:w-full">
                         Sobre
                     </a>
                     <a href="/contato"
+                        @click="open = false"
                         class="relative hover:text-yellow-400 transition after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-yellow-400 after:transition-all hover:after:w-full">
                         Contato
                     </a>
@@ -78,6 +87,7 @@
                 <div class="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
 
                     <a href="/carrinho"
+                        @click="open = false"
                         class="hidden md:block relative text-xl text-yellow-400 hover:scale-110 transition mr-2">
                         <i class="fas fa-shopping-cart"></i>
                         <span
@@ -85,11 +95,13 @@
                     </a>
 
                     <a href="/login"
+                        @click="open = false"
                         class="w-full md:w-auto px-6 py-2.5 rounded-md border border-white/20 text-white text-xs font-black uppercase tracking-widest hover:bg-white/10 transition-all backdrop-blur-sm text-center">
                         Entrar
                     </a>
 
                     <a href="/criar-conta"
+                        @click="open = false"
                         class="w-full md:w-auto px-6 py-2.5 bg-yellow-400 text-green-950 text-xs font-black rounded-md hover:bg-yellow-300 transition-all shadow-[0_8px_25px_-8px_rgba(250,204,21,0.5)] uppercase tracking-widest text-center">
                         Criar Conta
                     </a>
@@ -181,7 +193,7 @@
             <div
                 class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
 
-                <p>© {{ date('Y') }} Agroway. Todos os direitos reservados.</p>
+                <p>&copy; {{ date('Y') }} Agroway. Todos os direitos reservados.</p>
 
                 <div class="flex gap-6">
                     <a href="#" class="hover:text-yellow-400 transition">Privacidade</a>
@@ -192,7 +204,6 @@
         </div>
     </footer>
 
-    @vite('resources/js/app.js')
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     @stack('scripts')
 </body>
