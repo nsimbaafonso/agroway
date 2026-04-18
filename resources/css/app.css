@@ -48,3 +48,7 @@ body {
     padding-left: 4px;
 }
 
+[x-cloak] {
+    display: none !important;
+}
+
