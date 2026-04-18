@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\Produtor\DashboardController;
 
 //Rotas do site
 Route::get('/', [SiteController::class, 'home'])->name('home');
@@ -30,6 +31,11 @@ Route::get("/redefinir-senha", function () {
 });
 
 //dashboard do produtor
+Route::prefix('produtor')->group(function () {
+
+    Route::get('/dashboard/', [DashboardController::class, 'index']) ->name('produtor.dashboard');
+
+});
 
 //dashboard do cliente
 
